@@ -5,20 +5,16 @@ class Date
 {
 	int ngay, thang, nam;
 public:
-	Date()
+	static bool NamNhuan(int nam)
 	{
-
-	}
-	Date(const Date& d)
-	{
-		ngay = ngay + 1;
-		thang += 1;
-		nam+=1;
+		if (nam % 4 == 0 && nam % 100 != 0 || nam % 400 == 0)
+			return true;
+		return false;
 	}
 	void Nhap();
 	void HienThi();
-	void NextDay();
-	void  PreiousDay();
+	/*void NextDay();
+	void  PreiousDay();*/
 	//xây dựng pt Nhap;
 	//phải kt xem ngày nhập có hợp lệ không
 	//xây dựng pt HienThi dd/mm/yyyy

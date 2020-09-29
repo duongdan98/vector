@@ -1,15 +1,11 @@
 #pragma once
 #include<iostream>
+#include<vector>
 using namespace std;
 class PhanSo
 {
 	int ts, ms;
 public:
-	PhanSo(const PhanSo &a)
-	{
-		ts = a.ts;
-		ms = a.ms;
-	}
 	PhanSo()
 	{
 		ts = 0;
@@ -22,5 +18,11 @@ public:
 	PhanSo operator-(PhanSo a);
 	PhanSo operator*(PhanSo a);
 	PhanSo operator / (PhanSo a);
+	friend bool operator >(PhanSo a,PhanSo b);
+	friend bool operator <(PhanSo a, PhanSo b);
+	
+	PhanSo cong(int x);
+
 };
 
+void Sort(vector<PhanSo>& PS);

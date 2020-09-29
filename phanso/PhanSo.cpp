@@ -73,3 +73,32 @@ PhanSo PhanSo::operator/(PhanSo a)
 	temp.toiGian();
 	return temp;
 }
+bool operator >(PhanSo a, PhanSo b)
+{
+	float x = (float)a.ts / a.ms;
+	float y = (float)b.ts / b.ms;
+	return x > y ? true : false;
+ }
+bool operator <(PhanSo a, PhanSo b)
+{
+	float x = (float)a.ts / a.ms;
+	float y = (float)b.ts / b.ms;
+	return x < y ? true : false;
+ }
+void Sort(vector<PhanSo>& PS)
+{
+	cout << PS.size();
+	for (int i = 0; i < PS.size(); i++)
+	{
+		for (int j = 1; j < PS.size(); j++)
+		{
+			if (PS.at(i) > PS.at(j))
+			{
+				/*PhanSo temp = PS.at(i);
+				PS.at(i) = PS.at(j);
+				PS.at(j) = temp;*/
+				swap(PS.at(i), PS.at(j));
+			}
+		}
+	}
+}

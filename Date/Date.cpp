@@ -10,7 +10,7 @@ int kiemTra(int ngay, int thang, int nam)
 	int thg[] = { 0,31,28,31,30,31,30,31,31,30,31,30,31 };
 	if (namNhuan(nam) == 1)thg[2]++;
 	if (thang < 1 || thang>12) return 0;
-	if (ngay > thg[thang]&&ngay>0) return 0;
+	if (ngay > thg[thang] || ngay<1) return 0;
 	if (nam < 1000) return 0;
 	return 1;
 }
@@ -32,11 +32,10 @@ void Date::HienThi()
 	else cout << thang << "/";
 	cout << nam << endl;
 }
-void Date::NextDay()
+/*void Date::NextDay()
 {
 	int thg[] = { 0,31,28,31,30,31,30,31,31,30,31,30,31};
-	if (namNhuan(nam) == 1)
-		thg[2]++;
+	if (namNhuan(nam) == 1)thg[2]++;
 	if (ngay < thg[thang]) ngay++;
 	else
 	{
@@ -52,8 +51,7 @@ void Date::NextDay()
 void Date:: PreiousDay()
 {
 	int thg[] = { 31,31,28,31,30,31,30,31,31,30,31,30,31 };
-	if (namNhuan(nam) == 1)
-		thg[2]++;
+	if (namNhuan(nam) == 1)thg[2]++;
 	if (ngay > 1) ngay--;
 	else
 	{
@@ -64,5 +62,4 @@ void Date:: PreiousDay()
 		thang = 12;
 		nam--;
 	}
-
-}
+}*/
